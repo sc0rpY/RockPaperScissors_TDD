@@ -1,5 +1,7 @@
 #include "CppUnitTest.h"
 #include "pch.h"
+#include <string>  
+
 extern "C" {
 #include "../RockPaperScissors/RPS.c"  
 }
@@ -15,31 +17,32 @@ namespace RPSTests
         TEST_METHOD(TestRockVsScissors)
         {
             // Test that Rock beats Scissors (Player1 wins)
-            Assert::AreEqual("Player1", determineWinner("Rock", "Scissors"));
+            Assert::AreEqual(std::string("Player1"), std::string(determineWinner("Rock", "Scissors")));
         }
 
         TEST_METHOD(TestScissorsVsPaper)
         {
             // Test that Scissors beats Paper (Player1 wins)
-            Assert::AreEqual("Player1", determineWinner("Scissors", "Paper"));
+            Assert::AreEqual(std::string("Player1"), std::string(determineWinner("Scissors", "Paper")));
         }
 
         TEST_METHOD(TestPaperVsRock)
         {
             // Test that Paper beats Rock (Player1 wins)
-            Assert::AreEqual("Player1", determineWinner("Paper", "Rock"));
+            Assert::AreEqual(std::string("Player1"), std::string(determineWinner("Paper", "Rock")));
         }
 
         TEST_METHOD(TestDraw)
         {
             // Test when both players choose the same item
-            Assert::AreEqual("Draw", determineWinner("Rock", "Rock"));
+            Assert::AreEqual(std::string("Draw"), std::string(determineWinner("Rock", "Rock")));
         }
 
         TEST_METHOD(TestInvalidInput)
         {
-            // Test for input  other than Rock, Paper, or Scissors
-            Assert::AreEqual("Invalid", determineWinner("Lizard", "Spock"));
+            // Test for input other than Rock, Paper, or Scissors
+            Assert::AreEqual(std::string("Invalid"), std::string(determineWinner("Lizard", "Spock")));
         }
     };
 }
+
