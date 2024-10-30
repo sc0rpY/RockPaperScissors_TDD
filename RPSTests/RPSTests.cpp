@@ -1,5 +1,5 @@
-#include "pch.h"
 #include "CppUnitTest.h"
+#include "pch.h"
 extern "C" {
 #include "../RockPaperScissors/RPS.c"  
 }
